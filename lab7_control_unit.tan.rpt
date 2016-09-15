@@ -1,0 +1,369 @@
+Classic Timing Analyzer report for lab7_control_unit
+Thu Sep 15 11:21:48 2016
+Quartus II Version 9.1 Build 304 01/25/2010 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Timing Analyzer Summary
+  3. Timing Analyzer Settings
+  4. Clock Settings Summary
+  5. Parallel Compilation
+  6. tsu
+  7. tco
+  8. tpd
+  9. th
+ 10. Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2010 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                                                                                                        ;
++------------------------------+-------+---------------+-------------+-----------------+----------------------+-----------------+-----------------+--------------+
+; Type                         ; Slack ; Required Time ; Actual Time ; From            ; To                   ; From Clock      ; To Clock        ; Failed Paths ;
++------------------------------+-------+---------------+-------------+-----------------+----------------------+-----------------+-----------------+--------------+
+; Worst-case tsu               ; N/A   ; None          ; 5.864 ns    ; Instruction[8]  ; AccLoad$latch        ; --              ; Instruction[14] ; 0            ;
+; Worst-case tco               ; N/A   ; None          ; 13.189 ns   ; ALUinSel$latch  ; ALUinSel             ; Instruction[12] ; --              ; 0            ;
+; Worst-case tpd               ; N/A   ; None          ; 9.482 ns    ; Instruction[3]  ; from_control_unit[3] ; --              ; --              ; 0            ;
+; Worst-case th                ; N/A   ; None          ; 1.976 ns    ; Instruction[15] ; ALUinSel$latch       ; --              ; Instruction[12] ; 0            ;
+; Total number of failed paths ;       ;               ;             ;                 ;                      ;                 ;                 ; 0            ;
++------------------------------+-------+---------------+-------------+-----------------+----------------------+-----------------+-----------------+--------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Settings                                                                                                                            ;
++------------------------------------------------------------------------------------------------------+--------------------+------+----+-------------+
+; Option                                                                                               ; Setting            ; From ; To ; Entity Name ;
++------------------------------------------------------------------------------------------------------+--------------------+------+----+-------------+
+; Device Name                                                                                          ; EP1C20F324C8       ;      ;    ;             ;
+; Timing Models                                                                                        ; Final              ;      ;    ;             ;
+; Default hold multicycle                                                                              ; Same as Multicycle ;      ;    ;             ;
+; Cut paths between unrelated clock domains                                                            ; On                 ;      ;    ;             ;
+; Cut off read during write signal paths                                                               ; On                 ;      ;    ;             ;
+; Cut off feedback from I/O pins                                                                       ; On                 ;      ;    ;             ;
+; Report Combined Fast/Slow Timing                                                                     ; Off                ;      ;    ;             ;
+; Ignore Clock Settings                                                                                ; Off                ;      ;    ;             ;
+; Analyze latches as synchronous elements                                                              ; On                 ;      ;    ;             ;
+; Enable Recovery/Removal analysis                                                                     ; Off                ;      ;    ;             ;
+; Enable Clock Latency                                                                                 ; Off                ;      ;    ;             ;
+; Use TimeQuest Timing Analyzer                                                                        ; Off                ;      ;    ;             ;
+; Minimum Core Junction Temperature                                                                    ; 0                  ;      ;    ;             ;
+; Maximum Core Junction Temperature                                                                    ; 85                 ;      ;    ;             ;
+; Number of source nodes to report per destination node                                                ; 10                 ;      ;    ;             ;
+; Number of destination nodes to report                                                                ; 10                 ;      ;    ;             ;
+; Number of paths to report                                                                            ; 200                ;      ;    ;             ;
+; Report Minimum Timing Checks                                                                         ; Off                ;      ;    ;             ;
+; Use Fast Timing Models                                                                               ; Off                ;      ;    ;             ;
+; Report IO Paths Separately                                                                           ; Off                ;      ;    ;             ;
+; Perform Multicorner Analysis                                                                         ; Off                ;      ;    ;             ;
+; Reports the worst-case path for each clock domain and analysis                                       ; Off                ;      ;    ;             ;
+; Reports worst-case timing paths for each clock domain and analysis                                   ; On                 ;      ;    ;             ;
+; Specifies the maximum number of worst-case timing paths to report for each clock domain and analysis ; 100                ;      ;    ;             ;
+; Removes common clock path pessimism (CCPP) during slack computation                                  ; Off                ;      ;    ;             ;
+; Output I/O Timing Endpoint                                                                           ; Near End           ;      ;    ;             ;
++------------------------------------------------------------------------------------------------------+--------------------+------+----+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Settings Summary                                                                                                                                                             ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; Clock Node Name ; Clock Setting Name ; Type     ; Fmax Requirement ; Early Latency ; Late Latency ; Based on ; Multiply Base Fmax by ; Divide Base Fmax by ; Offset ; Phase offset ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; Instruction[14] ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
+; Instruction[15] ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
+; Instruction[13] ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
+; Instruction[12] ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
+; Instruction[11] ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
+; Instruction[8]  ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
+; Instruction[10] ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
+; Instruction[9]  ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 4      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++--------------------------------------------------------------------------------------------+
+; tsu                                                                                        ;
++-------+--------------+------------+-----------------+--------------------+-----------------+
+; Slack ; Required tsu ; Actual tsu ; From            ; To                 ; To Clock        ;
++-------+--------------+------------+-----------------+--------------------+-----------------+
+; N/A   ; None         ; 5.864 ns   ; Instruction[8]  ; AccLoad$latch      ; Instruction[14] ;
+; N/A   ; None         ; 5.827 ns   ; Instruction[12] ; Memory_Write$latch ; Instruction[14] ;
+; N/A   ; None         ; 5.684 ns   ; Instruction[8]  ; AccLoad$latch      ; Instruction[15] ;
+; N/A   ; None         ; 5.640 ns   ; Instruction[15] ; Memory_Write$latch ; Instruction[14] ;
+; N/A   ; None         ; 5.567 ns   ; Instruction[8]  ; AccLoad$latch      ; Instruction[13] ;
+; N/A   ; None         ; 5.533 ns   ; Instruction[12] ; Memory_Write$latch ; Instruction[13] ;
+; N/A   ; None         ; 5.346 ns   ; Instruction[15] ; Memory_Write$latch ; Instruction[13] ;
+; N/A   ; None         ; 5.078 ns   ; Instruction[8]  ; AccLoad$latch      ; Instruction[12] ;
+; N/A   ; None         ; 4.918 ns   ; Instruction[12] ; Memory_Write$latch ; Instruction[15] ;
+; N/A   ; None         ; 4.801 ns   ; Instruction[12] ; Memory_Write$latch ; Instruction[12] ;
+; N/A   ; None         ; 4.731 ns   ; Instruction[15] ; Memory_Write$latch ; Instruction[15] ;
+; N/A   ; None         ; 4.614 ns   ; Instruction[15] ; Memory_Write$latch ; Instruction[12] ;
+; N/A   ; None         ; 4.463 ns   ; Instruction[12] ; Memory_Write$latch ; Instruction[10] ;
+; N/A   ; None         ; 4.276 ns   ; Instruction[15] ; Memory_Write$latch ; Instruction[10] ;
+; N/A   ; None         ; 4.166 ns   ; Instruction[12] ; Memory_Write$latch ; Instruction[9]  ;
+; N/A   ; None         ; 4.064 ns   ; Instruction[12] ; MUX1Sel$latch      ; Instruction[14] ;
+; N/A   ; None         ; 4.029 ns   ; Instruction[12] ; Memory_Write$latch ; Instruction[11] ;
+; N/A   ; None         ; 3.979 ns   ; Instruction[15] ; Memory_Write$latch ; Instruction[9]  ;
+; N/A   ; None         ; 3.882 ns   ; Instruction[12] ; MUX1Sel$latch      ; Instruction[15] ;
+; N/A   ; None         ; 3.842 ns   ; Instruction[15] ; Memory_Write$latch ; Instruction[11] ;
+; N/A   ; None         ; 3.768 ns   ; Instruction[12] ; MUX1Sel$latch      ; Instruction[13] ;
+; N/A   ; None         ; 3.279 ns   ; Instruction[12] ; MUX1Sel$latch      ; Instruction[12] ;
+; N/A   ; None         ; 3.127 ns   ; Instruction[9]  ; AccLoad$latch      ; Instruction[14] ;
+; N/A   ; None         ; 2.947 ns   ; Instruction[9]  ; AccLoad$latch      ; Instruction[15] ;
+; N/A   ; None         ; 2.902 ns   ; Instruction[10] ; AccLoad$latch      ; Instruction[14] ;
+; N/A   ; None         ; 2.830 ns   ; Instruction[9]  ; AccLoad$latch      ; Instruction[13] ;
+; N/A   ; None         ; 2.748 ns   ; Instruction[13] ; AccLoad$latch      ; Instruction[14] ;
+; N/A   ; None         ; 2.738 ns   ; Instruction[11] ; AccLoad$latch      ; Instruction[14] ;
+; N/A   ; None         ; 2.722 ns   ; Instruction[10] ; AccLoad$latch      ; Instruction[15] ;
+; N/A   ; None         ; 2.646 ns   ; Instruction[15] ; AccLoad$latch      ; Instruction[14] ;
+; N/A   ; None         ; 2.605 ns   ; Instruction[10] ; AccLoad$latch      ; Instruction[13] ;
+; N/A   ; None         ; 2.568 ns   ; Instruction[13] ; AccLoad$latch      ; Instruction[15] ;
+; N/A   ; None         ; 2.558 ns   ; Instruction[11] ; AccLoad$latch      ; Instruction[15] ;
+; N/A   ; None         ; 2.466 ns   ; Instruction[15] ; AccLoad$latch      ; Instruction[15] ;
+; N/A   ; None         ; 2.451 ns   ; Instruction[13] ; AccLoad$latch      ; Instruction[13] ;
+; N/A   ; None         ; 2.441 ns   ; Instruction[11] ; AccLoad$latch      ; Instruction[13] ;
+; N/A   ; None         ; 2.349 ns   ; Instruction[15] ; AccLoad$latch      ; Instruction[13] ;
+; N/A   ; None         ; 2.341 ns   ; Instruction[9]  ; AccLoad$latch      ; Instruction[12] ;
+; N/A   ; None         ; 2.116 ns   ; Instruction[10] ; AccLoad$latch      ; Instruction[12] ;
+; N/A   ; None         ; 1.962 ns   ; Instruction[13] ; AccLoad$latch      ; Instruction[12] ;
+; N/A   ; None         ; 1.952 ns   ; Instruction[11] ; AccLoad$latch      ; Instruction[12] ;
+; N/A   ; None         ; 1.860 ns   ; Instruction[15] ; AccLoad$latch      ; Instruction[12] ;
+; N/A   ; None         ; 1.066 ns   ; Instruction[12] ; Memory_Write$latch ; Instruction[8]  ;
+; N/A   ; None         ; 0.879 ns   ; Instruction[15] ; Memory_Write$latch ; Instruction[8]  ;
+; N/A   ; None         ; 0.019 ns   ; Instruction[12] ; AccLoad$latch      ; Instruction[14] ;
+; N/A   ; None         ; -0.119 ns  ; Instruction[12] ; ALUinSel$latch     ; Instruction[14] ;
+; N/A   ; None         ; -0.161 ns  ; Instruction[12] ; AccLoad$latch      ; Instruction[15] ;
+; N/A   ; None         ; -0.236 ns  ; Instruction[15] ; ALUinSel$latch     ; Instruction[14] ;
+; N/A   ; None         ; -0.278 ns  ; Instruction[12] ; AccLoad$latch      ; Instruction[13] ;
+; N/A   ; None         ; -0.299 ns  ; Instruction[12] ; ALUinSel$latch     ; Instruction[15] ;
+; N/A   ; None         ; -0.416 ns  ; Instruction[12] ; ALUinSel$latch     ; Instruction[13] ;
+; N/A   ; None         ; -0.416 ns  ; Instruction[15] ; ALUinSel$latch     ; Instruction[15] ;
+; N/A   ; None         ; -0.533 ns  ; Instruction[15] ; ALUinSel$latch     ; Instruction[13] ;
+; N/A   ; None         ; -0.767 ns  ; Instruction[12] ; AccLoad$latch      ; Instruction[12] ;
+; N/A   ; None         ; -0.905 ns  ; Instruction[12] ; ALUinSel$latch     ; Instruction[12] ;
+; N/A   ; None         ; -1.022 ns  ; Instruction[15] ; ALUinSel$latch     ; Instruction[12] ;
++-------+--------------+------------+-----------------+--------------------+-----------------+
+
+
++-----------------------------------------------------------------------------------------+
+; tco                                                                                     ;
++-------+--------------+------------+--------------------+--------------+-----------------+
+; Slack ; Required tco ; Actual tco ; From               ; To           ; From Clock      ;
++-------+--------------+------------+--------------------+--------------+-----------------+
+; N/A   ; None         ; 13.189 ns  ; ALUinSel$latch     ; ALUinSel     ; Instruction[12] ;
+; N/A   ; None         ; 12.791 ns  ; AccLoad$latch      ; AccLoad      ; Instruction[12] ;
+; N/A   ; None         ; 12.700 ns  ; ALUinSel$latch     ; ALUinSel     ; Instruction[13] ;
+; N/A   ; None         ; 12.583 ns  ; ALUinSel$latch     ; ALUinSel     ; Instruction[15] ;
+; N/A   ; None         ; 12.403 ns  ; ALUinSel$latch     ; ALUinSel     ; Instruction[14] ;
+; N/A   ; None         ; 12.302 ns  ; AccLoad$latch      ; AccLoad      ; Instruction[13] ;
+; N/A   ; None         ; 12.185 ns  ; AccLoad$latch      ; AccLoad      ; Instruction[15] ;
+; N/A   ; None         ; 12.005 ns  ; AccLoad$latch      ; AccLoad      ; Instruction[14] ;
+; N/A   ; None         ; 11.841 ns  ; Memory_Write$latch ; Memory_Write ; Instruction[8]  ;
+; N/A   ; None         ; 9.110 ns   ; MUX1Sel$latch      ; MUX1Sel      ; Instruction[12] ;
+; N/A   ; None         ; 8.878 ns   ; Memory_Write$latch ; Memory_Write ; Instruction[11] ;
+; N/A   ; None         ; 8.741 ns   ; Memory_Write$latch ; Memory_Write ; Instruction[9]  ;
+; N/A   ; None         ; 8.702 ns   ; Memory_Write$latch ; Memory_Write ; Instruction[12] ;
+; N/A   ; None         ; 8.621 ns   ; MUX1Sel$latch      ; MUX1Sel      ; Instruction[13] ;
+; N/A   ; None         ; 8.507 ns   ; MUX1Sel$latch      ; MUX1Sel      ; Instruction[15] ;
+; N/A   ; None         ; 8.444 ns   ; Memory_Write$latch ; Memory_Write ; Instruction[10] ;
+; N/A   ; None         ; 8.325 ns   ; MUX1Sel$latch      ; MUX1Sel      ; Instruction[14] ;
+; N/A   ; None         ; 7.989 ns   ; Memory_Write$latch ; Memory_Write ; Instruction[15] ;
+; N/A   ; None         ; 7.374 ns   ; Memory_Write$latch ; Memory_Write ; Instruction[13] ;
+; N/A   ; None         ; 7.080 ns   ; Memory_Write$latch ; Memory_Write ; Instruction[14] ;
++-------+--------------+------------+--------------------+--------------+-----------------+
+
+
++-------------------------------------------------------------------------------------+
+; tpd                                                                                 ;
++-------+-------------------+-----------------+----------------+----------------------+
+; Slack ; Required P2P Time ; Actual P2P Time ; From           ; To                   ;
++-------+-------------------+-----------------+----------------+----------------------+
+; N/A   ; None              ; 9.482 ns        ; Instruction[3] ; from_control_unit[3] ;
+; N/A   ; None              ; 9.472 ns        ; Instruction[2] ; from_control_unit[2] ;
+; N/A   ; None              ; 9.421 ns        ; Instruction[4] ; from_control_unit[4] ;
+; N/A   ; None              ; 8.989 ns        ; Instruction[5] ; from_control_unit[5] ;
+; N/A   ; None              ; 8.978 ns        ; Instruction[6] ; from_control_unit[6] ;
+; N/A   ; None              ; 8.791 ns        ; Instruction[1] ; from_control_unit[1] ;
+; N/A   ; None              ; 8.790 ns        ; Instruction[0] ; from_control_unit[0] ;
+; N/A   ; None              ; 8.783 ns        ; Instruction[7] ; from_control_unit[7] ;
++-------+-------------------+-----------------+----------------+----------------------+
+
+
++--------------------------------------------------------------------------------------------------+
+; th                                                                                               ;
++---------------+-------------+-----------+-----------------+--------------------+-----------------+
+; Minimum Slack ; Required th ; Actual th ; From            ; To                 ; To Clock        ;
++---------------+-------------+-----------+-----------------+--------------------+-----------------+
+; N/A           ; None        ; 1.976 ns  ; Instruction[15] ; ALUinSel$latch     ; Instruction[12] ;
+; N/A           ; None        ; 1.867 ns  ; Instruction[10] ; AccLoad$latch      ; Instruction[12] ;
+; N/A           ; None        ; 1.859 ns  ; Instruction[12] ; ALUinSel$latch     ; Instruction[12] ;
+; N/A           ; None        ; 1.609 ns  ; Instruction[12] ; AccLoad$latch      ; Instruction[12] ;
+; N/A           ; None        ; 1.570 ns  ; Instruction[9]  ; AccLoad$latch      ; Instruction[12] ;
+; N/A           ; None        ; 1.487 ns  ; Instruction[15] ; ALUinSel$latch     ; Instruction[13] ;
+; N/A           ; None        ; 1.433 ns  ; Instruction[11] ; AccLoad$latch      ; Instruction[12] ;
+; N/A           ; None        ; 1.378 ns  ; Instruction[10] ; AccLoad$latch      ; Instruction[13] ;
+; N/A           ; None        ; 1.370 ns  ; Instruction[12] ; ALUinSel$latch     ; Instruction[13] ;
+; N/A           ; None        ; 1.370 ns  ; Instruction[15] ; ALUinSel$latch     ; Instruction[15] ;
+; N/A           ; None        ; 1.261 ns  ; Instruction[10] ; AccLoad$latch      ; Instruction[15] ;
+; N/A           ; None        ; 1.253 ns  ; Instruction[12] ; ALUinSel$latch     ; Instruction[15] ;
+; N/A           ; None        ; 1.190 ns  ; Instruction[15] ; ALUinSel$latch     ; Instruction[14] ;
+; N/A           ; None        ; 1.120 ns  ; Instruction[12] ; AccLoad$latch      ; Instruction[13] ;
+; N/A           ; None        ; 1.081 ns  ; Instruction[9]  ; AccLoad$latch      ; Instruction[13] ;
+; N/A           ; None        ; 1.081 ns  ; Instruction[10] ; AccLoad$latch      ; Instruction[14] ;
+; N/A           ; None        ; 1.073 ns  ; Instruction[12] ; ALUinSel$latch     ; Instruction[14] ;
+; N/A           ; None        ; 1.003 ns  ; Instruction[12] ; AccLoad$latch      ; Instruction[15] ;
+; N/A           ; None        ; 0.964 ns  ; Instruction[9]  ; AccLoad$latch      ; Instruction[15] ;
+; N/A           ; None        ; 0.944 ns  ; Instruction[11] ; AccLoad$latch      ; Instruction[13] ;
+; N/A           ; None        ; 0.827 ns  ; Instruction[11] ; AccLoad$latch      ; Instruction[15] ;
+; N/A           ; None        ; 0.823 ns  ; Instruction[12] ; AccLoad$latch      ; Instruction[14] ;
+; N/A           ; None        ; 0.784 ns  ; Instruction[9]  ; AccLoad$latch      ; Instruction[14] ;
+; N/A           ; None        ; 0.647 ns  ; Instruction[11] ; AccLoad$latch      ; Instruction[14] ;
+; N/A           ; None        ; 0.075 ns  ; Instruction[15] ; Memory_Write$latch ; Instruction[8]  ;
+; N/A           ; None        ; -0.112 ns ; Instruction[12] ; Memory_Write$latch ; Instruction[8]  ;
+; N/A           ; None        ; -1.018 ns ; Instruction[15] ; AccLoad$latch      ; Instruction[12] ;
+; N/A           ; None        ; -1.120 ns ; Instruction[13] ; AccLoad$latch      ; Instruction[12] ;
+; N/A           ; None        ; -1.507 ns ; Instruction[15] ; AccLoad$latch      ; Instruction[13] ;
+; N/A           ; None        ; -1.530 ns ; Instruction[8]  ; AccLoad$latch      ; Instruction[12] ;
+; N/A           ; None        ; -1.609 ns ; Instruction[13] ; AccLoad$latch      ; Instruction[13] ;
+; N/A           ; None        ; -1.624 ns ; Instruction[15] ; AccLoad$latch      ; Instruction[15] ;
+; N/A           ; None        ; -1.726 ns ; Instruction[13] ; AccLoad$latch      ; Instruction[15] ;
+; N/A           ; None        ; -1.804 ns ; Instruction[15] ; AccLoad$latch      ; Instruction[14] ;
+; N/A           ; None        ; -1.906 ns ; Instruction[13] ; AccLoad$latch      ; Instruction[14] ;
+; N/A           ; None        ; -2.019 ns ; Instruction[8]  ; AccLoad$latch      ; Instruction[13] ;
+; N/A           ; None        ; -2.136 ns ; Instruction[8]  ; AccLoad$latch      ; Instruction[15] ;
+; N/A           ; None        ; -2.147 ns ; Instruction[12] ; MUX1Sel$latch      ; Instruction[12] ;
+; N/A           ; None        ; -2.316 ns ; Instruction[8]  ; AccLoad$latch      ; Instruction[14] ;
+; N/A           ; None        ; -2.636 ns ; Instruction[12] ; MUX1Sel$latch      ; Instruction[13] ;
+; N/A           ; None        ; -2.750 ns ; Instruction[12] ; MUX1Sel$latch      ; Instruction[15] ;
+; N/A           ; None        ; -2.888 ns ; Instruction[15] ; Memory_Write$latch ; Instruction[11] ;
+; N/A           ; None        ; -2.932 ns ; Instruction[12] ; MUX1Sel$latch      ; Instruction[14] ;
+; N/A           ; None        ; -3.025 ns ; Instruction[15] ; Memory_Write$latch ; Instruction[9]  ;
+; N/A           ; None        ; -3.064 ns ; Instruction[15] ; Memory_Write$latch ; Instruction[12] ;
+; N/A           ; None        ; -3.075 ns ; Instruction[12] ; Memory_Write$latch ; Instruction[11] ;
+; N/A           ; None        ; -3.212 ns ; Instruction[12] ; Memory_Write$latch ; Instruction[9]  ;
+; N/A           ; None        ; -3.251 ns ; Instruction[12] ; Memory_Write$latch ; Instruction[12] ;
+; N/A           ; None        ; -3.322 ns ; Instruction[15] ; Memory_Write$latch ; Instruction[10] ;
+; N/A           ; None        ; -3.509 ns ; Instruction[12] ; Memory_Write$latch ; Instruction[10] ;
+; N/A           ; None        ; -3.777 ns ; Instruction[15] ; Memory_Write$latch ; Instruction[15] ;
+; N/A           ; None        ; -3.964 ns ; Instruction[12] ; Memory_Write$latch ; Instruction[15] ;
+; N/A           ; None        ; -4.392 ns ; Instruction[15] ; Memory_Write$latch ; Instruction[13] ;
+; N/A           ; None        ; -4.579 ns ; Instruction[12] ; Memory_Write$latch ; Instruction[13] ;
+; N/A           ; None        ; -4.686 ns ; Instruction[15] ; Memory_Write$latch ; Instruction[14] ;
+; N/A           ; None        ; -4.873 ns ; Instruction[12] ; Memory_Write$latch ; Instruction[14] ;
++---------------+-------------+-----------+-----------------+--------------------+-----------------+
+
+
++--------------------------+
+; Timing Analyzer Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Classic Timing Analyzer
+    Info: Version 9.1 Build 304 01/25/2010 Service Pack 1 SJ Web Edition
+    Info: Processing started: Thu Sep 15 11:21:48 2016
+Info: Command: quartus_tan --read_settings_files=off --write_settings_files=off lab7_control_unit -c lab7_control_unit --timing_analysis_only
+Warning: Timing Analysis is analyzing one or more combinational loops as latches
+    Warning: Node "AccLoad$latch" is a latch
+    Warning: Node "Memory_Write$latch" is a latch
+    Warning: Node "ALUinSel$latch" is a latch
+    Warning: Node "MUX1Sel$latch" is a latch
+Warning: Found pins functioning as undefined clocks and/or memory enables
+    Info: Assuming node "Instruction[14]" is a latch enable. Will not compute fmax for this pin.
+    Info: Assuming node "Instruction[15]" is a latch enable. Will not compute fmax for this pin.
+    Info: Assuming node "Instruction[13]" is a latch enable. Will not compute fmax for this pin.
+    Info: Assuming node "Instruction[12]" is a latch enable. Will not compute fmax for this pin.
+    Info: Assuming node "Instruction[11]" is a latch enable. Will not compute fmax for this pin.
+    Info: Assuming node "Instruction[8]" is a latch enable. Will not compute fmax for this pin.
+    Info: Assuming node "Instruction[10]" is a latch enable. Will not compute fmax for this pin.
+    Info: Assuming node "Instruction[9]" is a latch enable. Will not compute fmax for this pin.
+Warning: Found 6 node(s) in clock paths which may be acting as ripple and/or gated clocks -- node(s) analyzed as buffer(s) resulting in clock skew
+    Info: Detected gated clock "Mux6~0" as buffer
+    Info: Detected gated clock "Mux4~1" as buffer
+    Info: Detected gated clock "Mux4~0" as buffer
+    Info: Detected gated clock "Mux1~0" as buffer
+    Info: Detected gated clock "Mux2~2" as buffer
+    Info: Detected gated clock "Mux2~1" as buffer
+Info: tsu for register "AccLoad$latch" (data pin = "Instruction[8]", clock pin = "Instruction[14]") is 5.864 ns
+    Info: + Longest pin to register delay is 13.581 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.475 ns) = 1.475 ns; Loc. = PIN_C6; Fanout = 2; CLK Node = 'Instruction[8]'
+        Info: 2: + IC(8.361 ns) + CELL(0.292 ns) = 10.128 ns; Loc. = LC_X8_Y4_N5; Fanout = 1; COMB Node = 'Mux2~0'
+        Info: 3: + IC(0.182 ns) + CELL(0.114 ns) = 10.424 ns; Loc. = LC_X8_Y4_N6; Fanout = 1; COMB Node = 'Mux2~3'
+        Info: 4: + IC(2.567 ns) + CELL(0.590 ns) = 13.581 ns; Loc. = LC_X22_Y3_N2; Fanout = 1; REG Node = 'AccLoad$latch'
+        Info: Total cell delay = 2.471 ns ( 18.19 % )
+        Info: Total interconnect delay = 11.110 ns ( 81.81 % )
+    Info: + Micro setup delay of destination is 0.842 ns
+    Info: - Shortest clock path from clock "Instruction[14]" to destination register is 8.559 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.475 ns) = 1.475 ns; Loc. = PIN_R5; Fanout = 3; CLK Node = 'Instruction[14]'
+        Info: 2: + IC(1.361 ns) + CELL(0.114 ns) = 2.950 ns; Loc. = LC_X8_Y4_N7; Fanout = 2; COMB Node = 'Mux1~0'
+        Info: 3: + IC(5.495 ns) + CELL(0.114 ns) = 8.559 ns; Loc. = LC_X22_Y3_N2; Fanout = 1; REG Node = 'AccLoad$latch'
+        Info: Total cell delay = 1.703 ns ( 19.90 % )
+        Info: Total interconnect delay = 6.856 ns ( 80.10 % )
+Info: tco from clock "Instruction[12]" to destination pin "ALUinSel" through register "ALUinSel$latch" is 13.189 ns
+    Info: + Longest clock path from clock "Instruction[12]" to source register is 9.409 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.475 ns) = 1.475 ns; Loc. = PIN_U5; Fanout = 6; CLK Node = 'Instruction[12]'
+        Info: 2: + IC(1.671 ns) + CELL(0.590 ns) = 3.736 ns; Loc. = LC_X8_Y4_N7; Fanout = 2; COMB Node = 'Mux1~0'
+        Info: 3: + IC(5.559 ns) + CELL(0.114 ns) = 9.409 ns; Loc. = LC_X14_Y28_N3; Fanout = 1; REG Node = 'ALUinSel$latch'
+        Info: Total cell delay = 2.179 ns ( 23.16 % )
+        Info: Total interconnect delay = 7.230 ns ( 76.84 % )
+    Info: + Micro clock to output delay of source is 0.000 ns
+    Info: + Longest register to pin delay is 3.780 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC_X14_Y28_N3; Fanout = 1; REG Node = 'ALUinSel$latch'
+        Info: 2: + IC(1.672 ns) + CELL(2.108 ns) = 3.780 ns; Loc. = PIN_C7; Fanout = 0; PIN Node = 'ALUinSel'
+        Info: Total cell delay = 2.108 ns ( 55.77 % )
+        Info: Total interconnect delay = 1.672 ns ( 44.23 % )
+Info: Longest tpd from source pin "Instruction[3]" to destination pin "from_control_unit[3]" is 9.482 ns
+    Info: 1: + IC(0.000 ns) + CELL(1.475 ns) = 1.475 ns; Loc. = PIN_U7; Fanout = 1; PIN Node = 'Instruction[3]'
+    Info: 2: + IC(5.899 ns) + CELL(2.108 ns) = 9.482 ns; Loc. = PIN_V7; Fanout = 0; PIN Node = 'from_control_unit[3]'
+    Info: Total cell delay = 3.583 ns ( 37.79 % )
+    Info: Total interconnect delay = 5.899 ns ( 62.21 % )
+Info: th for register "ALUinSel$latch" (data pin = "Instruction[15]", clock pin = "Instruction[12]") is 1.976 ns
+    Info: + Longest clock path from clock "Instruction[12]" to destination register is 9.409 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.475 ns) = 1.475 ns; Loc. = PIN_U5; Fanout = 6; CLK Node = 'Instruction[12]'
+        Info: 2: + IC(1.671 ns) + CELL(0.590 ns) = 3.736 ns; Loc. = LC_X8_Y4_N7; Fanout = 2; COMB Node = 'Mux1~0'
+        Info: 3: + IC(5.559 ns) + CELL(0.114 ns) = 9.409 ns; Loc. = LC_X14_Y28_N3; Fanout = 1; REG Node = 'ALUinSel$latch'
+        Info: Total cell delay = 2.179 ns ( 23.16 % )
+        Info: Total interconnect delay = 7.230 ns ( 76.84 % )
+    Info: + Micro hold delay of destination is 0.000 ns
+    Info: - Shortest pin to register delay is 7.433 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.475 ns) = 1.475 ns; Loc. = PIN_R4; Fanout = 5; CLK Node = 'Instruction[15]'
+        Info: 2: + IC(1.366 ns) + CELL(0.292 ns) = 3.133 ns; Loc. = LC_X8_Y4_N9; Fanout = 2; COMB Node = 'Mux4~0'
+        Info: 3: + IC(4.008 ns) + CELL(0.292 ns) = 7.433 ns; Loc. = LC_X14_Y28_N3; Fanout = 1; REG Node = 'ALUinSel$latch'
+        Info: Total cell delay = 2.059 ns ( 27.70 % )
+        Info: Total interconnect delay = 5.374 ns ( 72.30 % )
+Info: Quartus II Classic Timing Analyzer was successful. 0 errors, 7 warnings
+    Info: Peak virtual memory: 164 megabytes
+    Info: Processing ended: Thu Sep 15 11:21:48 2016
+    Info: Elapsed time: 00:00:00
+    Info: Total CPU time (on all processors): 00:00:00
+
+
